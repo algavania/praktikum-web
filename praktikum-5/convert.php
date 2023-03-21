@@ -1,8 +1,22 @@
 <?php
+$nama = $_POST['nama'];
 $nilaiAngka = $_POST['nilaiAngka'];
 $nilaiHuruf = '-';
 $predikat = '-';
 $color = 'text-success';
+
+$flag = false;
+if (!ctype_alpha($nama)) {
+    echo '<div class="fw-bold text-danger">Nama hanya boleh berisi alfabet!</div>';
+    $flag = true;
+}
+if (!is_numeric($nilaiAngka)) {
+    echo '<div class="fw-bold text-danger">Nilai hanya boleh berisi angka!</div>';
+    $flag = true;
+}
+
+if ($flag) return;
+
 if ($nilaiAngka >= 81 && $nilaiAngka <= 100) {
     $nilaiHuruf = 'A';
     $predikat = 'Excellent';
@@ -39,5 +53,6 @@ else {
     $color = 'text-primary';
 }
 
-echo '<div class="mt-3 fw-bold">Nilai Huruf: ' . '<span class="'.$color.'">'.$nilaiHuruf.'</span>' . '</div>';
+echo '<div class="fw-bold">Nama: ' . $nama. '</div>';
+echo '<div class="fw-bold">Nilai Huruf: ' . '<span class="'.$color.'">'.$nilaiHuruf.'</span>' . '</div>';
 echo '<div class="fw-bold">Predikat: ' . '<span class="'.$color.'">'.$predikat.'</span>' . '</div>';

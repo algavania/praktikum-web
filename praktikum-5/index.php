@@ -35,12 +35,18 @@
             <div class="col-6" id="card-form">
                 <h1 class="text-center">Konversi Nilai</h1>
                 <form method="POST">
+                <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" aria-describedby="nama">
+                    </div>
+
                     <div class="mb-3">
                         <label for="nilaiAngka" class="form-label">Nilai Angka</label>
-                        <input type="number" class="form-control" id="nilaiAngka" name="nilaiAngka" aria-describedby="nilaiAngka">
+                        <input type="text" class="form-control" id="nilaiAngka" name="nilaiAngka" aria-describedby="nilaiAngka">
                     </div>
                     <input type="submit" name="submit" value="Convert" class="btn btn-primary w-100 py-2">
                 </form>
+                <div class="mt-3"></div>
                 <div id="result" class="text-center"></div>
             </div>
             <div class="col-3"></div>
